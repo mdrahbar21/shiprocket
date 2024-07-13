@@ -26,7 +26,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
   const {orderId}=req.query;
 
-  let token = await getShiprocketToken(); 
+  let token = await getShiprocketToken();
 
   const fetchOrder = async (token: string) => {
     const url = `https://apiv2.shiprocket.in/v1/external/orders/show/${orderId}`;

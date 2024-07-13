@@ -29,7 +29,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   let token = await getShiprocketToken(); 
 
   const trackOrder = async (token: string) => {
-    const url = `https://apiv2.shiprocket.in/v1/external/courier/track?order_id=${orderId}`;
+    const url = `https://apiv2.shiprocket.in/v1/external/courier/track?order_id=${orderId}&channel_id=${channel_id}`;
     const options = {
       method: 'GET',
       headers: {
